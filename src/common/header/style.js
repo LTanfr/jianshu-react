@@ -61,19 +61,6 @@ export const SearchWrapper = styled.div `
       color: #fff;
     }
   }
-  .slide-enter {
-    width: 200px;
-    transition: all .4s ease-out;
-  }
-  .slider-enter-active {
-    width: 320px;
-  }
-  .slider-exit {
-    transition: all .4s ease-out;
-  }
-  .slider-exit-active {
-    width: 200px;
-  }
 `;
 
 export const NavSearch = styled.input.attrs({
@@ -96,6 +83,20 @@ export const NavSearch = styled.input.attrs({
   }
   &.focused {
     width: 320px;
+  }
+  &.slide-enter {
+    width: 200px;
+    transition: all .4s ease-out;
+  }
+  &.slide-enter-active {
+    width: 320px;
+  }
+  &.slide-exit {
+    width: 320px;
+    transition: all .4s ease-out;
+  }
+  &.slide-exit-active {
+    width: 200px;
   }
 `;
 
