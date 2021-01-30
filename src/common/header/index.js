@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
+import { actionCreators } from './store';
 import {
   HeaderWrapper,
   Logo,
@@ -9,8 +10,38 @@ import {
   NavSearch,
   Addition,
   Button,
-  SearchWrapper
+  SearchWrapper,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoItem,
+  SearchInfoList
 } from './style';
+
+const getListArea = (show) => {
+  if(show) {
+    return (
+      <SearchInfo>
+        <SearchInfoTitle>
+          热门搜索
+          <SearchInfoSwitch>
+            换一批
+          </SearchInfoSwitch>
+          <SearchInfoList>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>娱乐</SearchInfoItem>
+            <SearchInfoItem>生活</SearchInfoItem>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>教育</SearchInfoItem>
+            <SearchInfoItem>教育</SearchInfoItem>
+          </SearchInfoList>
+        </SearchInfoTitle>
+      </SearchInfo>      
+    )
+  }else {
+    return null;
+  }
+}
 
 const Header = (props) => {
   return (
@@ -40,6 +71,7 @@ const Header = (props) => {
           >
             &#xe614;
           </i>
+          {getListArea(props.focused)}
         </SearchWrapper>
       </Nav>
       <Addition>
@@ -55,7 +87,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.focused
+    focused: state.getIn(['header', 'focused'])
   }
 }
 
@@ -63,16 +95,10 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      const action = {
-        type: 'search_focus'
-      };
-      dispatch(action);
+      dispatch(actionCreators.searchFocus());
     },
     handleInputBlur() {
-      const action = {
-        type: 'search_blur'
-      };
-      dispatch(action);
+      dispatch(actionCreators.searchBlur());
     }
   }
 }
