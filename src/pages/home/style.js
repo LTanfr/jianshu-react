@@ -56,11 +56,9 @@ export const ListItem = styled.div `
   padding: 20px 0;
   border-bottom: 1px solid #dcdcdc;
   overflow: hidden;
-
   .pic {
-    margin-left:10px;
-    display:block;
-    width: 145px;
+    dispaly: inline-block;
+    width: 150px;
     height: 100px;
     float: right;
     border-radius: 10px;
@@ -68,7 +66,7 @@ export const ListItem = styled.div `
 `;
 
 export const ListInfo = styled.div `
-  width: 470px;
+  width: 460px;
   float: left;
   .title {
     font-size: 18px;
@@ -80,7 +78,6 @@ export const ListInfo = styled.div `
   }
 
   .desc {
-    margin: 0 0 8px;
     font-size: 13px;
     line-height: 24px;
     color: #999;
@@ -89,13 +86,25 @@ export const ListInfo = styled.div `
 
 
 export const ListMeta = styled.div `
-  padding-right: 0!important;
+  padding-top: 5px;
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
-  
+`;
+
+export const MetaItem = styled.span `
+  margin-right:10px;
+  color: #b4b4b4;
   .iconfont {
     font-size: 13px;
+    margin-right:3px;
+  }
+  .level {
     color: red;
+  }
+
+  a {
+    text-decoration: none;
+    color: #b4b4b4;
   }
 `;

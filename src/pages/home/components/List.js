@@ -1,30 +1,58 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 import {
  ListItem,
  ListInfo,
- ListMeta
+ ListMeta,
+ MetaItem
 } from '../style';
 
-export default class List extends Component {
+class List extends Component {
   render(){
+    const { list } = this.props;
     return (
       <Fragment>
-        <ListItem>
-          <img className="pic" alt="" src="https://tse1-mm.cn.bing.net/th/id/OIP.GcxvHkvvzrVg4npU-QdaOQHaE8?w=280&h=187&c=7&o=5&pid=1.7"></img>
-          <ListInfo>
-            <a href="/" className="title">毛毛虫成长记---【6】虚惊一场</a>
-            <p className="desc">日日无事，事复日日，忙忙。亦茫茫。 滴答······滴答······滴答······滴答······ 风雨过后的，叶片上的雨珠正顺着叶子的纹路向...</p>
-          </ListInfo>
-          <ListMeta>
-            <i className="iconfont">&#xe63d;</i>
-            <span>65.4</span>
-            <a href="/">倾城的</a>
-            <a href="/">103</a>
-            <span>431</span>
-          </ListMeta>
-        </ListItem>
-
+        {
+          list.map((item) => {
+            return (
+              <ListItem key={item.get('id')}>
+                <img className="pic" alt="" src={item.get('imgUrl')}></img>
+                <ListInfo>
+                  <a href="/" className="title">{item.get('title')}</a>
+                  <p className="desc">{item.get('desc')}</p>
+                  <ListMeta>
+                    <MetaItem>
+                      <i className="iconfont level">&#xe63d;</i>
+                      <span className="level">65.4</span>
+                    </MetaItem>
+                    <MetaItem>
+                      <a href="/">倾城的</a>
+                    </MetaItem>
+                    <MetaItem>
+                      <i className="iconfont">&#xe629;</i>
+                      <a href="/">103</a>
+                    </MetaItem>
+                    <MetaItem>
+                      <i className="iconfont">&#xe66d;</i>
+                      <span>431</span>
+                    </MetaItem>
+                  </ListMeta>
+                </ListInfo>
+              </ListItem>      
+            );
+          })
+        }
       </Fragment>
     )
   }
 }
+
+const mapState = (state) => ({
+  list: state.getIn(["home", "articleList"])
+});
+
+const mapDispatch = () => ({
+
+});
+
+export default connect(mapState, mapDispatch)(List);
