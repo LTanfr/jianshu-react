@@ -27,6 +27,7 @@ export const TopicWrapper = styled.div `
   padding: 20px 0 10px 0;
   overflow: hidden;
   margin-left: -10px;
+  border-bottom: 1px solid #dcdcdc;
 `;
 
 export const TopicItem = styled.div `
@@ -47,5 +48,54 @@ export const TopicItem = styled.div `
     width: 32px;
     height: 32px;
     margin-right: 10px;
+  }
+`;
+
+
+export const ListItem = styled.div `
+  padding: 20px 0;
+  border-bottom: 1px solid #dcdcdc;
+  overflow: hidden;
+
+  .pic {
+    margin-left:10px;
+    display:block;
+    width: 145px;
+    height: 100px;
+    float: right;
+    border-radius: 10px;
+  }
+`;
+
+export const ListInfo = styled.div `
+  width: 470px;
+  float: left;
+  .title {
+    font-size: 18px;
+    display: inherit;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .desc {
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 24px;
+    color: #999;
+  }
+`;
+
+
+export const ListMeta = styled.div `
+  padding-right: 0!important;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  
+  .iconfont {
+    font-size: 13px;
+    color: red;
   }
 `;
