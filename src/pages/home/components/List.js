@@ -23,18 +23,18 @@ class List extends Component {
                   <ListMeta>
                     <MetaItem>
                       <i className="iconfont level">&#xe63d;</i>
-                      <span className="level">65.4</span>
+                      <span className="level">{item.get('level')}</span>
                     </MetaItem>
                     <MetaItem>
-                      <a href="/">倾城的</a>
+                      <a href="/">{item.get('author')}</a>
                     </MetaItem>
                     <MetaItem>
                       <i className="iconfont">&#xe629;</i>
-                      <a href="/">103</a>
+                      <a href="/">{item.get('comments')}</a>
                     </MetaItem>
                     <MetaItem>
                       <i className="iconfont">&#xe66d;</i>
-                      <span>431</span>
+                      <span>{item.get('stars')}</span>
                     </MetaItem>
                   </ListMeta>
                 </ListInfo>
