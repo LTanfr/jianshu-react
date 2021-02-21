@@ -1,0 +1,1 @@
+export const CHANGE_PAGE = 'home/CHANGE_PAGE';
