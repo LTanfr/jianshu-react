@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import {
-  WriterWrapper
+  WriterWrapper,
+  WriterRecommend,
+  WriterRecommendSwitch
 } from '../style'
 export default class Writer extends Component {
   render(){
     return (
       <WriterWrapper>
-          Writer
+        <WriterRecommend>
+          作者推荐
+          <WriterRecommendSwitch>
+
+          </WriterRecommendSwitch>
+        </WriterRecommend>
       </WriterWrapper>
     )
   }

@@ -128,5 +128,26 @@ export const WriterWrapper = styled.div `
   border: 1px solid #dcdcdc;
   border-radius: 3px;
   line-height: 300px;
-  text-align: center;
+
+`;
+
+export const WriterRecommend = styled.div `
+  margin: 5px 0 15px 5px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #969696;
+`;
+
+export const WriterRecommendSwitch = styled.div `
+  float: right;
+  font-size: 13px;
+  cursor: pointer;
+  .spin {
+    display:block;
+    float: left;
+    font-size: 12px;
+    margin-right: 3px;
+    transition: all .3s ease-in;
+    transform-origin: center center;
+  }
 `;
