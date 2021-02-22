@@ -6,23 +6,7 @@ const defaultState = fromJS({
   totalPage: 0,
   topicList: [],
   articleList: [],
-  recommendList: [{
-    id: 1,
-    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-daily-e6f6601abc495573ad37f2532468186f.png"
-  },
-  {
-    id: 2,
-    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
-  },
-  {
-    id: 3,
-    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
-  },
-  {
-    id: 4,
-    imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
-  }],
-
+  recommendList: [],
   writerList: [{
     id: 1,
     imgUrl: "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
@@ -101,6 +85,8 @@ const homeReducer = (state = defaultState, action) => {
       return state.set('topicList', action.data);
     case constants.GET_ARTICLE_LIST:
       return state.set('articleList', action.data);
+    case constants.GET_RECOMMEND_LIST:
+      return state.set('recommendList', action.data);
     case constants.GET_TOTAL_PAGE:
       return state.set('totalPage', action.totalPage);
     case constants.CHANGE_PAGE:

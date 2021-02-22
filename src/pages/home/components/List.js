@@ -10,10 +10,10 @@ import {
 
 class List extends Component {
   render(){
-    const { list, getarticleList } = this.props;
+    const { list, getArticleList } = this.props;
 
     if (list.size === 0) {
-      getarticleList();
+      getArticleList();
     }
 
     return (
@@ -58,8 +58,8 @@ const mapState = (state) => ({
 });
 
 const mapDispatch = (dispatch) => ({
-  getarticleList() {
-    dispatch(actionCreators.getarticleList());
+  getArticleList() {
+    dispatch(actionCreators.getArticleList());
   }
 });
 

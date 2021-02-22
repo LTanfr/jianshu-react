@@ -36,7 +36,7 @@ export const getList = () => {
             const data = res.data;
             dispatch(changeList(data.data));
         }).catch(() => {
-            console.log('error');
+            console.log('error:getList');
         });
     }
 }

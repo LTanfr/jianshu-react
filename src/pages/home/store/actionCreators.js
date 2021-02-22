@@ -23,7 +23,7 @@ export const getTopicList = () => {
             const data = res.data;
             dispatch(topicList(data.data));
         }).catch(() => {
-            console.log('error');
+            console.log('error:getTopicList');
         });
     }
 }
@@ -33,13 +33,30 @@ const articleList = (data) => ({
     data: fromJS(data)
 });
 
-export const getarticleList = () => {
+export const getArticleList = () => {
     return (dispatch) => {
         axios.get('api/articleList.json').then((res) => {
             const data = res.data;
             dispatch(articleList(data.data));
         }).catch(() => {
-            console.log('error');
+            console.log('error:getArticleList');
         });
+    }
+}
+
+const recommendList = (data) => ({
+    type: constants.GET_RECOMMEND_LIST,
+    data: fromJS(data)
+});
+
+export const getRecommendList = () => {
+    return (dispatch) => {
+        axios.get('api/recommendList.json').then((res) => {
+            const data = res.data;
+            console.log(data);
+            dispatch(recommendList(data.data));
+        }).catch(() => {
+            console.log('error:getRecommendList')
+        })
     }
 }
