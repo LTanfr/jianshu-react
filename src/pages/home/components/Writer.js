@@ -11,10 +11,12 @@ import {
 class Writer extends Component {
 
   render() {
-
-    const { handleChangWriterPage, list, page, totalPage } = this.props;
+    const { handleChangWriterPage, list, page, totalPage, getTotalPage } = this.props;
     const newList = list.toJS();
     const pageList = [];
+    if ( totalPage === 0) {
+      getTotalPage(newList);
+    }
     if (newList.length) {
       for (let i = (page - 1) * 5; i < page * 5; i++) {
         if (newList[i]) {
@@ -65,6 +67,11 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
+    getTotalPage(list) {
+      let tempPage = Math.ceil(list.length / 5);
+      dispatch(actionCreators.getTotalPage(tempPage))
+    },
+
     handleChangWriterPage(page, totalPage, spin) {
       const originAngle = +spin.style.transform.replace(/[^0-9]/ig, '');
       spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';

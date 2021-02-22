@@ -37,6 +37,6 @@ export const getList = () => {
             dispatch(changeList(data.data));
         }).catch(() => {
             console.log('error');
-        })
+        });
     }
-};
+}
