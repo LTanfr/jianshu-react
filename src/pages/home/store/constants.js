@@ -3,3 +3,4 @@ export const GET_TOTAL_PAGE = 'home/GET_TOTAL_PAGE';
 export const GET_TOPIC_LIST = 'home/GET_TOPIC_LIST';
 export const GET_ARTICLE_LIST = 'home/GET_ARTICLE_LIST';
 export const GET_RECOMMEND_LIST = 'home/GET_RECOMMEND_LIST';
+export const CHANGE_HOME_DATA = 'home/CHANGE_HOME_DATA';

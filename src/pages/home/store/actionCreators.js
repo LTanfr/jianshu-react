@@ -12,51 +12,22 @@ export const getTotalPage = (totalPage) => ({
     totalPage
 });
 
-const topicList = (data) => ({
-    type: constants.GET_TOPIC_LIST,
-    data: fromJS(data)
+const changeHomeData = (data) => ({
+    type: constants.CHANGE_HOME_DATA,
+    topicList: fromJS(data.topicList),
+    recommendList: fromJS(data.recommendList),
+    articleList: fromJS(data.articleList),
+    writerList: fromJS(data.writerList),
+    totalPage: Math.ceil(data.writerList.length / 5)
 });
 
-export const getTopicList = () => {
+export const getHomeData = () => {
     return (dispatch) => {
-        axios.get('/api/topicList.json').then((res) => {
-            const data = res.data;
-            dispatch(topicList(data.data));
+        axios.get('api/home.json').then((res) => {
+            const data = res.data.data;
+            dispatch(changeHomeData(data));
         }).catch(() => {
-            console.log('error:getTopicList');
+            console.log('error:getHomeData')
         });
-    }
-}
-
-const articleList = (data) => ({
-    type: constants.GET_ARTICLE_LIST,
-    data: fromJS(data)
-});
-
-export const getArticleList = () => {
-    return (dispatch) => {
-        axios.get('api/articleList.json').then((res) => {
-            const data = res.data;
-            dispatch(articleList(data.data));
-        }).catch(() => {
-            console.log('error:getArticleList');
-        });
-    }
-}
-
-const recommendList = (data) => ({
-    type: constants.GET_RECOMMEND_LIST,
-    data: fromJS(data)
-});
-
-export const getRecommendList = () => {
-    return (dispatch) => {
-        axios.get('api/recommendList.json').then((res) => {
-            const data = res.data;
-            console.log(data);
-            dispatch(recommendList(data.data));
-        }).catch(() => {
-            console.log('error:getRecommendList')
-        })
     }
 }

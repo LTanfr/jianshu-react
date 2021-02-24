@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { actionCreators } from '../store';
 import {
  ListItem,
  ListInfo,
@@ -10,11 +9,7 @@ import {
 
 class List extends Component {
   render(){
-    const { list, getArticleList } = this.props;
-
-    if (list.size === 0) {
-      getArticleList();
-    }
+    const { list } = this.props;
 
     return (
       <Fragment>
@@ -57,10 +52,6 @@ const mapState = (state) => ({
   list: state.getIn(["home", "articleList"])
 });
 
-const mapDispatch = (dispatch) => ({
-  getArticleList() {
-    dispatch(actionCreators.getArticleList());
-  }
-});
 
-export default connect(mapState, mapDispatch)(List);
+
+export default connect(mapState, null)(List);

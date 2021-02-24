@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { actionCreators } from './store';
 import {
   HomeWrapper,
   HomeLeft,
@@ -8,8 +9,9 @@ import Topic from './components/Topic';
 import List from './components/List';
 import Recommend from './components/Recommend';
 import Writer from './components/Writer';
+import { connect } from 'react-redux';
 
-export default class Home extends Component {
+class Home extends Component {
     render() {
         return (
           <HomeWrapper>
@@ -25,4 +27,16 @@ export default class Home extends Component {
           </HomeWrapper>
         )
     }
+
+    componentDidMount() {
+      this.props.changeHomeDate();
+    }
 }
+
+const mapDispatch = (dispatch) => ({
+  changeHomeDate() {
+    dispatch(actionCreators.getHomeData());
+  }
+});
+
+export default connect(null, mapDispatch)(Home);
