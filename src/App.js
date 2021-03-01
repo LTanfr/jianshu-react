@@ -10,8 +10,8 @@ function App() {
   return (
     <Provider store={store}>
       <Fragment>
-        <Header />
         <BrowserRouter>
+          <Header/>
           <Route path='/' exact component={Home} ></Route>
           <Route path='/detail' component={Detail} ></Route>
 

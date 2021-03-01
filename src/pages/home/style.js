@@ -102,12 +102,20 @@ export const MetaItem = styled.span `
   .level {
     color: red;
   }
-
-  a {
-    text-decoration: none;
-    color: #b4b4b4;
-  }
 `;
+
+  export const LoadMore = styled.div `
+   width: 100%;
+   height: 40px;
+   line-height: 40px;
+   margin: 30px 0;
+   background: #a5a5a5;
+   text-align: center;
+   border-radius: 20px;
+   color: #fff;
+   cursor: pointer;
+  `;
+
 
 export const RecommendWrapper = styled.div  `
   margin: 30px 0;
@@ -203,4 +211,17 @@ export const WriterListItem = styled.li `
     color: #969696;
     margin: 0 0 10px;
   }
+`;
+
+export const BackTop = styled.div `
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
 `;
