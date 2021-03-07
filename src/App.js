@@ -4,6 +4,7 @@ import { BrowserRouter, Route} from 'react-router-dom';
 import store from './store/index';
 import { Fragment } from 'react';
 import Home from './pages/home';
+import Login from './pages/login';
 import Detail from './pages/detail';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <BrowserRouter>
           <Header/>
           <Route path='/' exact component={Home} ></Route>
+          <Route path='/login' exact component={Login} ></Route>
           <Route path='/detail/:id' component={Detail} ></Route>
 
         </BrowserRouter>

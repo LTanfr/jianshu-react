@@ -1,0 +1,21 @@
+.login-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 56px;
+  background: #eee;
+}
+.login-form {
+  width: 380px;
+  margin: 0 auto;
+  margin-top: 15%;
+}
+.login-form-input {
+  height: 40px;
+  line-height: 40px;
+}
+.login-form-button {
+  width: 100%;
+  height: 40px;
+}
