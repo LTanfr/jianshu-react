@@ -5,11 +5,12 @@
   bottom: 0;
   top: 56px;
   background: #eee;
+  z-index: 0;
 }
 .login-form {
   width: 380px;
   margin: 0 auto;
-  margin-top: 15%;
+  margin-top: 12%;
 }
 .login-form-input {
   height: 40px;
